@@ -1,4 +1,5 @@
-const url = 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815';
+const getCrimeData = async () => {
+const url = await 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815';
 const options = {
 	method: 'GET',
 	headers: {
@@ -14,3 +15,6 @@ try {
 } catch (error) {
 	console.error(error);
 }
+};
+
+getCrimeData();
