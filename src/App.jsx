@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import getAppleNews from './api'
 import './App.css'
+import News from './components/news/News'
 
 function App() {
 
@@ -19,7 +20,11 @@ function App() {
       <div>
         Hello world
         {
-          appleNews.map(news =>  )
+          appleNews.length > 0 && (
+          appleNews.map((news) => (
+          <News key={news.id} news={news} />
+          ))
+          )
         }
       </div>
   )
