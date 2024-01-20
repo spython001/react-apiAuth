@@ -1,11 +1,20 @@
+/* eslint-disable react/prop-types */
 import './news.scss'
 
-export default function News() {
+export default function News({news}) {
+    console.log(news)
   return (
     <div className='news'>
-        <h2>author</h2>
-        <span>title</span>
-        <span>content</span>
+        {news ? (
+    <>
+      <h2>{news.title}</h2>
+      <span>{news.author}</span>
+      <span>{news.content}</span>
+      <hr />
+      </>
+    ) : (
+      <p>Loading news...</p>
+    )}
     </div>
   )
 }

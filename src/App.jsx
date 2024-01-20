@@ -9,9 +9,9 @@ function App() {
 
   useEffect (() => {
     const fetchResult = async () => {
-      const results = await getAppleNews();
-      console.log(results);
-      setAppleNews(results)
+      const { articles } = await getAppleNews();
+      console.log(articles);
+      setAppleNews(articles)
     }
     fetchResult();
   }, [])
