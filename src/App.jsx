@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
-import getCrimeData from './api'
+import getAppleNews from './api'
 import './App.css'
 
 function App() {
 
-  const [popular, setPopular] = useState([])
+  const [appleNews, setAppleNews] = useState([])
 
   useEffect (() => {
     const fetchResult = async () => {
-      const crimeResult = await getCrimeData();
-      console.log(crimeResult);
+      const results = await getAppleNews();
+      console.log(results);
+      setAppleNews(results)
     }
     fetchResult();
   }, [])
@@ -17,6 +18,9 @@ function App() {
   return (
       <div>
         Hello world
+        {
+          appleNews.map(news =>  )
+        }
       </div>
   )
 }
